@@ -1,6 +1,4 @@
-from common.jsonextractor import JsonExtractor 
-from common.metadata.metadata import *
-import pytest
+from json_extractor import JsonExtractor 
 
 def test_extract_json_from_str() -> dict:
     simple_json_str = """{"name":"Moustafa","age":3}"""
@@ -21,7 +19,7 @@ def test_get_json_parsed_from_file() -> dict:
     "inputFilesType":"csv",
     "dataFileDelimiter": "|",
     "totalInputFileColumns": "5",
-    "inputSourcePath": "/home/moustafa/Scala/spark-etl-demo/data/raw_zone/3G_ERCSN/",
+    "inputSourcePath": "C:/Users/Mahmoud Alaa/Desktop/ETL_Project/Python_ETL/data/raw_zone/3G_ERCSN/ercsn_4g_20200512182929_part02_processing.csv",
     "processingSuffix": "*_processing",
     "header": "false",
     "inputSchema": [

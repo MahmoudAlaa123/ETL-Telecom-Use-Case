@@ -13,20 +13,22 @@ class FileHandler:
         Returns:
             str: The absolute path.
 
-        Raises:
-            FileNotFoundError: If the resulting absolute path does not point to an existing file.
+
         """
         # Get the current working directory
         cwd = os.getcwd()
 
-        # Combine the current working directory with the relative path
-        absolute_path = os.path.join(cwd, relative_path)
+        for root, _, files in os.walk(cwd):
+                for file in files:
+                    if file.lower() == relative_path:
+                        absolute_path = os.path.join(root, file)
 
-        # Check if the file exists
-        if not os.path.exists(absolute_path):
-            raise FileNotFoundError(f"No file found at {absolute_path}")
+
 
         return absolute_path
+    
+
+        
 
     @staticmethod
     def read_resource_file(filepath : str) -> str:
